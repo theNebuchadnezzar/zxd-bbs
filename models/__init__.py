@@ -205,7 +205,7 @@ class Model(object):
         path = self.db_path()
         save(l, path)
 def configured_engine():
-    url = 'mysql+pymysql://root:{}@localhost/web21?charset=utf8mb4'.format(
+    url = 'mysql+pymysql://root:{}@localhost/zxd-bbs?charset=utf8mb4'.format(
         config.mysql_password
     )
     e = create_engine(url, echo=True)
@@ -223,9 +223,11 @@ def reset_database():
     e = create_engine(url, echo=True)
 
     with e.connect() as c:
-        c.execute('DROP DATABASE IF EXISTS web21')
-        c.execute('CREATE DATABASE web21 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci')
-        c.execute('USE web21')
+        c.execute('DROP DATABASE IF EXISTS 
+                  
+                  ')
+        c.execute('CREATE DATABASE zxd-bbs CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci')
+        c.execute('USE zxd-bbs')
 
     SQLBase.metadata.create_all(bind=e)
 
