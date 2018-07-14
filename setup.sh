@@ -36,9 +36,9 @@ rm -f /etc/nginx/sites-enabled/default
 rm -f /etc/nginx/sites-available/default
 
 # 建立一个软连接
-ln -s -f /root/zxd-bbs/zxd-bbs.conf /etc/supervisor/conf.d/web20.conf
+ln -s -f /root/zxd-bbs/zxd-bbs.conf /etc/supervisor/conf.d/zxd-bbs.conf
 # 不要再 sites-available 里面放任何东西
-ln -s -f /root/zxd-bbs/zxd-bbs.nginx /etc/nginx/sites-enabled/web20
+ln -s -f /root/zxd-bbs/zxd-bbs.nginx /etc/nginx/sites-enabled/zxd-bbs
 
 # 重启服务器
 service supervisor restart
