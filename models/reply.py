@@ -19,6 +19,6 @@ class Reply(SQLMixin, SQLBase):
     user_id = Column(INTEGER, nullable=False)
 
     def user(self):
-        u = User.one(self.user_id)
+        u = User.one(id=self.user_id)
         return u
 

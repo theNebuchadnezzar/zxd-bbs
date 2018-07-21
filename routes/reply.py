@@ -45,11 +45,11 @@ def send_mails(sender, receivers, content):
 def add():
     form = request.form
     u = current_user()
-
+    topic_id = form['topic_id']
     content = form['content']
     users = users_from_content(content)
     send_mails(u, users, content)
 
-    m = Reply.new(form, user_id=u.id)
+    m = Reply.new(topic_id=topic_id,content=content, user_id=u.id)
     return redirect(url_for('topic.detail', id=m.topic_id))
 

@@ -33,12 +33,12 @@ def main():
     # Test.usrename
     #
     User.new(
-        username='gua',
+        username='zxd',
         password='123',
     )
 
     User.new(
-        username='guagua',
+        username='test',
         password='123',
     )
     print(User.exist(id=1))

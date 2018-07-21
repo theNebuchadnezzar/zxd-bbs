@@ -79,7 +79,8 @@ def profile():
 
 @main.route('/user/<int:id>')
 def user_detail(id):
-    u = User.one(id)
+    log('id:', id)
+    u = User.one(id=id)
     if u is None:
         abort(404)
     else:
@@ -124,3 +125,4 @@ def setting():
         return redirect(url_for('.index'))
     else:
         return render_template('setting.html', user=u)
+

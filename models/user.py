@@ -6,6 +6,7 @@ from models import (
     SQLMixin,
     SQLBase,
 )
+from utils import log
 
 class User(SQLMixin, SQLBase):
     __tablename__ = 'User'
@@ -50,7 +51,9 @@ class User(SQLMixin, SQLBase):
             username=form['username'],
             password=User.salted_password(form['password']),
         )
+        log('query ', query)
         e = User.exist(**query)
+        log(e)
         if e:
             return User.one(**query)
         else:
@@ -78,7 +81,7 @@ class User(SQLMixin, SQLBase):
         print('topics_sorted reversed ', topics_sorted_id)
 
         #按照顺序找到topic_id对应的topic对象
-        topics_sorted = [Topic.find_by(id=id) for id in topics_sorted_id]
+        topics_sorted = [Topic.one(id=id) for id in topics_sorted_id]
 
         return topics_sorted
 

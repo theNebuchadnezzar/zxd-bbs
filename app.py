@@ -8,6 +8,7 @@ from routes.reply import main as reply_routes
 from routes.user import main as user_routes
 from routes.board import main as board_routes
 from routes.mail import main as mail_routes
+from routes.resume import main as resume_routes
 
 
 def configured_app():
@@ -37,6 +38,7 @@ def register_routes(app):
     app.register_blueprint(user_routes, url_prefix='/profile')
     app.register_blueprint(board_routes, url_prefix='/board')
     app.register_blueprint(mail_routes, url_prefix='/mail')
+    app.register_blueprint(resume_routes, url_prefix='/resume')
 
 
 # 运行代码

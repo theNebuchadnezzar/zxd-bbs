@@ -34,7 +34,7 @@ class Topic(SQLMixin, SQLBase):
 
 
     def user(self):
-        u = User.one(self.user_id)
+        u = User.one(id=self.user_id)
         return u
 
     def replies(self):
