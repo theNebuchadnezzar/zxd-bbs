@@ -2,6 +2,8 @@
 个人论坛
 地址：http://www.zhaoxingdong.com/
 
+![Image text](https://github.com/theNebuchadnezzar/zxd-bbs/raw/master/static/img/homepage.jpg)
+
 
 ![Alt Text](https://github.com/theNebuchadnezzar/zxd-bbs/static/img/homepage.jpg)
 
